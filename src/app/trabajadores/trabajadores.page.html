@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Trabajadores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">trabajadores</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="card mb-2">
+    <ng-container *ngFor="let worker of listaWorkers">
+    <div class="card-header d-flex justify-content-between align-item-center">
+        {{worker.nombre}} {{worker.apellidos}}
+        <div>
+            <button class="btn btn-primary" (click)="visual = !visual">
+                Mostrar
+            </button>
+            <button class="btn btn-danger" (click)="eliminarTrabajador(worker.id)">
+                Eliminar
+            </button>
+
+        </div>
+    </div>
+    <div class="card-body" [hidden]="visual">
+        <ul>
+          <li>DNI: {{worker.dni}}</li>
+          <li>TELÉFONO: {{worker.telefono}}</li>
+          <li>EMAIL: {{worker.email}}</li>
+          <li>DEPARTAMENTO: {{worker.departamento}}</li>
+        </ul>
+    </div>
+  </ng-container>
+</div>
+
+</ion-content>

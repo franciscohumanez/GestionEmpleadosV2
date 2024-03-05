@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="card">
+    <div class="card-body">
+        <form (submit)="addTrabajador(nombre, apellidos, dni, telefono, email, departamento)">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="nombre" #nombre/>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="apellidos" #apellidos/>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="dni" #dni/>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="string" class="form-control" placeholder="telefono" #telefono/>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="string" class="form-control" placeholder="email" #email/>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="string" class="form-control" placeholder="departamento" #departamento/>
+            </div>
+            <br>
+            <button class="btn btn-primary btn-lg btn-block">
+                Enviar
+            </button>
+        </form>
+    </div>
+</div>
+
+</ion-content>
